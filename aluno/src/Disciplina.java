@@ -4,6 +4,7 @@ public class Disciplina {
     private String disciplina;
     private double[] notas;
     private int horas;
+    private double media;
 
     public Disciplina(String disciplina){
         this.disciplina = disciplina;
@@ -19,6 +20,7 @@ public class Disciplina {
         for (double nota : notas){
             media += nota;
         }
+        this.media = media / 4;
         if (media / 4 >= 7)
             return true;
         return false;
@@ -30,9 +32,7 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return "Disciplina{" +
-                "disciplina='" + disciplina + '\'' +
-                ", notas=" + Arrays.toString(notas) +
-                '}';
+        return disciplina + " " + notas.length + " "
+                + media + " " + Arrays.toString(notas);
     }
 }
